@@ -18,7 +18,8 @@
 [**The 4 Pillars**](#-core-pillars) •
 [**16 Specialized Skills**](#-the-16-skills-ecosystem) •
 [**Repositories**](#-ecosystem-repositories) •
-[**Manifesto**](https://github.com/mate-sdt/mate-sdt/blob/main/MANIFESTO.md)
+[**Manifesto**](https://github.com/mate-sdt/mate-sdt/blob/main/MANIFESTO.md) •
+[**Support**](https://ko-fi.com/crespoantonio)
 
 </div>
 
