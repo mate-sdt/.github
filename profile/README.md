@@ -26,7 +26,7 @@
 
 ## 💡 What is M.A.T.E.?
 
-Frontier AI reasoning models (**Claude Sonnet & Opus 5.5**, **OpenAI GPT-6 / GPT-5.6 series**, **Google Gemini 4**, and **DeepSeek V4**) and autonomous coding environments (**Claude Code**, **Cursor**, **Windsurf**, **Google Antigravity**, and **GitHub Copilot**) are extraordinary at algorithmic problem-solving, architectural reasoning, and feature development. 
+Frontier AI reasoning models (**Claude Sonnet & Opus 5.5**, **OpenAI GPT-6 / GPT-5.6 series**, **Google Gemini 4**, and **DeepSeek V4**) and autonomous coding environments (**Claude Code**, **Cursor**, **Windsurf**, **Google Antigravity**, **GitHub Copilot**, and **OpenAI Codex CLI**) are extraordinary at algorithmic problem-solving, architectural reasoning, and feature development. 
 
 However, when tasked with **Software Quality & End-to-End Test Automation**, even the most advanced reasoning models suffer from predictable, catastrophic failure modes:
 
