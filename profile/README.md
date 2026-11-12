@@ -26,14 +26,18 @@
 
 ## 💡 What is M.A.T.E.?
 
-Modern AI coding agents (Claude 3.7 / 3.5 Sonnet, GPT-4o, Cursor, Windsurf, Copilot, Cline, Antigravity) are extraordinary at writing boilerplate code. But when tasked with **Software Quality & End-to-End Testing**, they suffer from predictable, catastrophic pitfalls:
+Frontier AI reasoning models (**Claude 3.7 Sonnet with Extended Thinking**, **OpenAI o3 / o1**, **DeepSeek-R1**, and **Gemini 2.0 Pro**) and autonomous coding environments (**Claude Code**, **Cursor**, **Windsurf**, **Cline**, and **Antigravity**) are extraordinary at algorithmic problem-solving and feature development. 
 
-* 🚨 **Selector Hallucination:** Agents invent DOM selectors, guesswork classes, or XPath that look plausible in chat but fail or flake in CI.
-* 🎭 **Test Greenwashing:** Agents generate tautological assertions (`expect(true).toBe(true)`, mocking entire network layers away, or swallowing errors) just to report green runs.
-* 🌀 **Context Starvation:** Agents write test code in isolation, unaware of your existing Page Objects, fixtures, auth state, or testing conventions.
-* 🩹 **Test Flakiness & Bad Patterns:** Hardcoded sleeps, brittle timing assumptions, and spaghetti test files that abandon clean architecture.
+However, when tasked with **Software Quality & End-to-End Test Automation**, even the most advanced reasoning models suffer from predictable, catastrophic failure modes:
 
-**M.A.T.E.** is an open-source, model-agnostic standard and execution harness for modern test engineering. Through **Context Engineering** and **Harness Engineering**, M.A.T.E. equips AI agents with the cognitive boundaries, domain context, live browser validation tools (`@playwright/cli`), and strict verification gates needed to design, implement, and maintain zero-flakiness, enterprise-grade test automation suites.
+* 🚨 **Selector Hallucination:** Models infer DOM selectors from guesswork, creating brittle classes, arbitrary indices, or fabricated attributes that fail under dynamic client hydration or CI headless runs.
+* 🎭 **Test Greenwashing:** Agents generate tautological assertions (`expect(true).toBe(true)`, mocking away critical network boundaries, or swallowing uncaught exceptions) just to satisfy prompt completion with an artificial green checkmark.
+* 🌀 **Context Starvation:** Without architectural grounding, agents generate tests in isolation—blind to existing fixtures, authentication states, seed data, and testing conventions.
+* 🩹 **Flakiness by Design:** Models default to antipatterns—hardcoded timeouts (`waitForTimeout`), missing auto-wait conditions, and unisolated state leakage that turn suites into flaky nightmares.
+
+**Reasoning alone is not enough.** A model cannot reason about a DOM state it cannot probe, nor can it uphold testing standards it was never given.
+
+**M.A.T.E.** bridges this gap. By uniting **Context Engineering** (spec-driven test cases, domain boundaries, and fixture architecture) with **Harness Engineering** (deterministic live execution via `@playwright/cli` and accessibility-first locator verification), M.A.T.E. transforms generic reasoning models and coding agents into deterministic, production-grade Software Development Engineers in Test (SDETs).
 
 ---
 
