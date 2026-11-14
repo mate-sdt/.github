@@ -25,7 +25,7 @@
 
 ## 💡 What is M.A.T.E.?
 
-Frontier AI models (**Claude Sonnet & Opus**, **GPT-4o & o-series**, **Gemini 1.5/2.0**, and **DeepSeek**) and autonomous coding agents (**Antigravity**, **Claude Code**, **Cursor**, **Windsurf**, **GitHub Copilot**, and **OpenAI Codex**) can write thousands of lines of code per minute.
+Frontier AI reasoning models (**Claude Sonnet & Opus 5.5**, **OpenAI GPT-6 / GPT-5.6 series**, **Google Gemini 4**, and **DeepSeek V4**) and autonomous coding environments (**Claude Code**, **Cursor**, **Windsurf**, **Google Antigravity**, **GitHub Copilot**, and **OpenAI Codex CLI**) are extraordinary at algorithmic problem-solving, architectural reasoning, and feature development. 
 
 However, when tasked with **Software Quality & Test Automation**, reasoning models alone suffer from predictable, catastrophic failure modes:
 
