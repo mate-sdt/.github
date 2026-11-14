@@ -8,8 +8,6 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Playwright](https://img.shields.io/badge/Playwright-v1.50+-45ba4b?style=flat-square&logo=playwright&logoColor=white)](https://playwright.dev/)
-[![Container Sandboxing](https://img.shields.io/badge/Sandboxing-Rootless_Containers-892ca0?style=flat-square)](https://podman.io/)
-[![GitHub stars](https://img.shields.io/github/stars/mate-sdt/mate-sdt?style=flat-square)](https://github.com/mate-sdt/mate-sdt/stargazers)
 
 <br/>
 
