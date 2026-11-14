@@ -192,5 +192,5 @@ M.A.T.E. is proudly open-source and community-driven.
 ---
 
 <div align="center">
-<sub>Built with 🧉 for the future of software quality. Created by <a href="https://github.com/tonycrespo">Tony Crespo</a> (<a href="https://youtube.com/@UnJuniorEnApuros">Un Junior En Apuros</a>) & the M.A.T.E. Community.</sub>
+<sub>Built with 🧉 for the future of software quality. Created by <a href="https://www.linkedin.com/in/antonio-crespo89/">Tony Crespo</a> & the M.A.T.E. Community.</sub>
 </div>
