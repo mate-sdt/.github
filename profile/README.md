@@ -38,7 +38,7 @@ However, when tasked with **Software Quality & Test Automation**, reasoning mode
 $$\text{Agent} = \text{Model} + \text{Harness} + \text{Knowledge}$$
 
 1. **Context Engineering (_Write, Select, Compress, Isolate_):** Living architecture in `MATE-PROJECT-MAP.md` (`< 3,000` tokens), JIT Context Packs (`npx mate-sdt context`), compact ARIA snapshots (`< 800` tokens via `@playwright/cli`), and sub-agent isolation (`--subagent <skill>`).
-2. **Harness Engineering & Closed-Loop Verification:** A deterministic **5-Gate Closed Verification Loop (`npx mate-sdt gate --loop`)** with self-correction, containerized sandboxing, AST linting, and continuous doc-gardening (`npx mate-sdt gc`).
+2. **Harness Engineering & Closed-Loop Verification:** A deterministic **5-Gate Closed Verification Loop (`npx mate-sdt gate --loop`)** with self-correction, AST linting, and continuous doc-gardening (`npx mate-sdt gc`).
 
 ---
 
@@ -72,7 +72,7 @@ The **M.A.T.E.** acronym defines the four non-negotiable layers of Spec-Driven T
 ```mermaid
 flowchart LR
     M["M — Model<br/>(Intent & FSM Specs)"] --> A["A — Assert<br/>(Business Invariants & SOLID)"]
-    A --> T["T — Threat & Trash<br/>(Container Sandboxing & Chaos)"]
+    A --> T["T — Threat & Trash<br/>(Concurrency, Fuzzing & Load)"]
     T --> E["E — Explore<br/>(Human Charters & Waivers)"]
 ```
 
@@ -86,11 +86,11 @@ A test that does not validate a domain invariant is merely an illusion to paint 
 * **Anti-Greenwashing Mandate:** When a real defect is discovered, agents must never weaken the assertion; they preserve the true spec oracle, mark it with `test.fail(true, 'BUG-XXX')`, and generate a formal defect report via `npx mate-sdt bug`.
 * **Pragmatic Classification:** Evaluates scenarios across `[AUTOMATE_UI]`, `[AUTOMATE_API]`, `[MANUAL_TEST]`, and `[EXPLORATORY_CHARTER]`.
 
-### 3. 💥 T — Threat & Trash (Container Sandboxing, Concurrency & Fuzzing)
-Real software faces malice, race conditions, and network chaos. M.A.T.E. runs adversarial verification inside **isolated container sandboxes** (using containers like Podman or Docker by default) to protect host environments and ensure 100% reproducibility:
-* **Adversarial Threats & Race Conditions:** Sub-50ms double-click idempotency checks and multi-session concurrency testing (`tests/threats/`).
-* **Performance SLA Oracles:** Grafana k6 executes load, stress, and spike profiles validating p95 latency and error rate thresholds (`npx mate-sdt k6`).
-* **Boundary Fuzzing & Security:** BOLA/IDOR authorization bypass detection and payload fuzzing (SQLi, XSS, malformed payloads).
+### 3. 💥 T — Threat & Trash (Concurrency, Fuzzing & Load Testing)
+Real software faces malice, race conditions, and network chaos. M.A.T.E. subjects your target application to adversarial verification across three vectors:
+* **Adversarial Threats & Race Conditions:** Sub-50ms double-click idempotency checks and multi-session concurrency testing (`tests/threats/`) using Playwright with `Promise.all`.
+* **Boundary Fuzzing & Security:** BOLA/IDOR authorization bypass detection and payload fuzzing (extreme Unicode, numeric overflow, SQLi/XSS, and malformed inputs).
+* **Performance SLA Oracles:** Grafana k6 executes load, stress, and spike profiles validating p95 latency and error rate thresholds (`npx mate-sdt k6`), with zero-install container runner support (Podman or Docker) or native host execution.
 
 ### 4. 🧭 E — Explore & Evolve (Human Exploratory Charters & Release Governance)
 *Testing != Checking.* Machines excel at deterministic checking; humans excel at exploratory testing. M.A.T.E. equips human engineers with:
@@ -117,8 +117,8 @@ M.A.T.E. modularizes the Quality Engineering lifecycle into **20 synergistic age
 | `mate-pw-codegen` | Authoring | Translates live recon into clean test suites with storage-state and request mocking. |
 | `mate-pw-forensics` | Forensics | Multi-session concurrency (`-s=actor`), zip traces, and video recording with chapters. |
 | `mate-assert-api` | API | Typed API clients (`BaseApiClient`), contract validation, and Zod/TypeScript schema assertions. |
-| `mate-threat` | Threat | Race conditions, double-click idempotency, and adversarial fuzzing in container sandboxes. |
-| `mate-performance-k6` | Performance | Grafana k6 SLA oracles (`p95 <= 400ms`), load profiles, and thresholds in container sandboxes. |
+| `mate-threat` | Threat | Race conditions, double-click idempotency, BOLA detection, and boundary fuzzing. |
+| `mate-performance-k6` | Performance | Grafana k6 SLA oracles (`p95 <= 400ms`), load profiles, and thresholds (via Podman/Docker runners or host). |
 | `mate-explore` | Explore | SBTM charters (`npx mate-sdt charter`), heuristic testing, and formal release waivers. |
 | `mate-triage` | Triage | 5-class failure triage (`LOCATOR_DRIFT`, `TIMING`, `APP_BUG`, `ENV`, `SPEC_FLAW`) and `npx mate-sdt heal`. |
 | `mate-maintenance` | Governance | Continuous doc-gardening, technical debt tracking, and Quality Score audits (`npx mate-sdt gc`). |
@@ -142,7 +142,7 @@ Pre-orchestrated execution workflows for common real-world QA engineering scenar
 3. **`/mate-flow-greenfield`**: End-to-end design from requirement to spec, SOLID suites, threat & fuzzing suites, and CI/CD pipelines.
 4. **`/mate-flow-brownfield`**: Reverse-engineers legacy repositories, discovers unmapped endpoints, freezes P0 invariants, and eliminates tech debt.
 5. **`/mate-flow-api-contract`**: Ingests OpenAPI/Swagger, builds typed API clients, and asserts schema & business invariants.
-6. **`/mate-flow-performance`**: Translates SLA oracles into Grafana k6 load profiles executed in rootless container sandboxes.
+6. **`/mate-flow-performance`**: Translates SLA oracles into Grafana k6 load profiles executed via Podman/Docker container runners or native host.
 7. **`/mate-flow-triage`**: Ingests CI failure traces, classifies failure root causes in 5 categories, and plans self-healing patches.
 8. **`/mate-flow-ai-agent`**: End-to-end AI agent evaluation: Socratic dataset discovery, Promptfoo/DeepEval scoring, OWASP red teaming, and OTel trace auditing.
 
